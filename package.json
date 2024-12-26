@@ -1,0 +1,49 @@
+{
+  "name": "rspack-problem-matchers",
+  "displayName": "Rspack Problem Matchers",
+  "description": "Problem matchers for rspack tasks",
+  "publisher": "czfadmin",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/czfadmin/rspack-problem-matchers/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/czfadmin/rspack-problem-matchers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/czfadmin/rspack-problem-matchers.git"
+  },
+  "keywords": [
+    "rspack",
+    "problem matcher",
+    "tasks"
+  ],
+  "contributes": {
+    "problemMatchers": [
+      {
+        "name": "rspack-watch",
+        "base": "$rspack",
+        "label": "rspack --watch problem matcher",
+        "severity": "error",
+        "applyTo": "closedDocuments",
+        "source": "esbuild",
+        "fileLocation": "relative",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "^(\\s.*)"
+          },
+          "endsPattern": {
+            "regexp": "^Rspack compiled successfully in ([\\d].*?).?([\\d].*?) m?s$"
+          }
+        }
+      }
+    ]
+  }
+}
